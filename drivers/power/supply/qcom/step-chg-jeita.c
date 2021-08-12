@@ -118,25 +118,26 @@ static struct step_chg_cfg step_chg_config = {
 static struct jeita_fcc_cfg jeita_fcc_config = {
 	.psy_prop	= POWER_SUPPLY_PROP_TEMP,
 	.prop_name	= "BATT_TEMP",
-	.hysteresis	= 10, /* 1degC hysteresis */
+	.hysteresis	= 0, /* 1degC hysteresis */
 	.fcc_cfg	= {
 		/* TEMP_LOW	TEMP_HIGH	FCC */
-		{0,		100,		5000000},
-		{101,		200,		5000000},
-		{201,		450,		5000000},
-		{451,		550,		5000000},
+		{0,		100,		600000},
+		{51,		150,		1200000},
+		{151,		450,		2900000},
+		{451,		600,		2000000},
 	},
 };
 
 static struct jeita_fv_cfg jeita_fv_config = {
 	.psy_prop	= POWER_SUPPLY_PROP_TEMP,
 	.prop_name	= "BATT_TEMP",
-	.hysteresis	= 10, /* 1degC hysteresis */
+	.hysteresis	= 0, /* 1degC hysteresis */
 	.fv_cfg		= {
 		/* TEMP_LOW	TEMP_HIGH	FCC */
-		{0,		100,		6200000},
-		{101,		450,		6200000},
-		{451,		550,		6200000},
+		{0,		100,		600000},
+		{51,		150,		1200000},
+		{151,		450,		2900000},
+		{451,		600,		2000000},
 	},
 };
 
@@ -254,7 +255,7 @@ static int handle_step_chg_config(struct step_chg_info *chip)
 
 	vote(chip->fcc_votable, STEP_CHG_VOTER, true, fcc_ua);
 
-	pr_debug("%s = %d Step-FCC = %duA\n",
+	pr_err("%s = %d Step-FCC = %duA\n",
 		step_chg_config.prop_name, pval.intval, fcc_ua);
 
 update_time:
@@ -337,7 +338,7 @@ static int handle_jeita(struct step_chg_info *chip)
 
 	vote(chip->fv_votable, JEITA_VOTER, true, fv_uv);
 
-	pr_debug("%s = %d FCC = %duA FV = %duV\n",
+	pr_err("%s = %d FCC = %duA FV = %duV\n",
 		jeita_fv_config.prop_name, pval.intval, fcc_ua, fv_uv);
 
 update_time:
