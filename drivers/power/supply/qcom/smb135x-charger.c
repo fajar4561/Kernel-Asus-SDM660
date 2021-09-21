@@ -1007,10 +1007,10 @@ static int dc_current_table[] = {
 	2000,
 };
 
-#define CURRENT_100_MA		100
-#define CURRENT_150_MA		150
-#define CURRENT_500_MA		500
-#define CURRENT_900_MA		900
+#define CURRENT_100_MA		700
+#define CURRENT_150_MA		1000
+#define CURRENT_500_MA		1500
+#define CURRENT_900_MA		2700
 #define SUSPEND_CURRENT_MA	2
 
 static int __smb135x_usb_suspend(struct smb135x_chg *chip, bool suspend)

@@ -30,8 +30,8 @@
 #include "storm-watch.h"
 #include <linux/pmic-voter.h>
 
-#define SMB138X_DEFAULT_FCC_UA 1000000
-#define SMB138X_DEFAULT_ICL_UA 1500000
+#define SMB138X_DEFAULT_FCC_UA 2000000
+#define SMB138X_DEFAULT_ICL_UA 3000000
 
 /* Registers that are not common to be mentioned in smb-reg.h */
 #define SMB2CHG_MISC_ENG_SDCDC_CFG2	(MISC_BASE + 0xC1)
@@ -57,7 +57,7 @@ static struct smb_params v1_params = {
 		.reg	= FAST_CHARGE_CURRENT_CFG_REG,
 		.min_u	= 0,
 		.max_u	= 6000000,
-		.step_u	= 25000,
+		.step_u	= 30000,
 	},
 	.fv		= {
 		.name	= "float voltage",
