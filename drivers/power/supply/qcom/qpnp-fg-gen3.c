@@ -1922,7 +1922,7 @@ static int fg_charge_full_update(struct fg_chip *chip)
 		if (rc < 0)
 			goto out;
 
-		chip->charge_full = true;
+		chip->charge_full = false;
 		fg_dbg(chip, FG_STATUS, "msoc_raw = %d bsoc: %d recharge_soc: %d delta_soc: %d\n",
 			msoc_raw, bsoc >> 8, recharge_soc, chip->delta_soc);
 	}

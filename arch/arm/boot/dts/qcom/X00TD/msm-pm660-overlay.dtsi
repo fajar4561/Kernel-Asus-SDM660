@@ -99,8 +99,8 @@
 	qcom,hold-soc-while-full;
 	qcom,linearize-soc;
 	qcom,fg-force-load-profile;
-	qcom,fg-jeita-thresholds = <0 1 59 60>;
-	qcom,fg-jeita-hyst-temp = <3>;
+	qcom,fg-jeita-thresholds = <0 15 45 60>;
+	qcom,fg-jeita-hyst-temp = <0>;
 	qcom,fg-recharge-voltage = <4150>;
 	qcom,fg-recharge-soc-thr = <98>;
 	qcom,fg-auto-recharge-soc;
