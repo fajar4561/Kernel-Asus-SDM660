@@ -244,6 +244,11 @@
 	qcom,battery-data = <&qrd_batterydata>;
 	qcom,fg-jeita-thresholds = <0 15 45 60>;
 	qcom,battery-thermal-coefficients = [9d 50 ff];
+	qcom,cl-disable = <1>;
+	qcom,hold-soc-while-full;
+	qcom,linearize-soc;
+	qcom,tcss-enable;
+	qcom,bass-enable;
 };
 
 &pm660_haptics {

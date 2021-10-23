@@ -160,6 +160,11 @@
 	qcom,battery-data = <&qrd_batterydata>;
 	qcom,fg-jeita-thresholds = <0 15 45 60>;
 	qcom,battery-thermal-coefficients = [9d 50 ff];
+	qcom,bass-enable;
+	qcom,tcss-enable;
+	qcom,linearize-soc;
+	qcom,hold-soc-while-full;
+    qcom,cl-disable = <1>;
 };
 
 &uartblsp1dm1 {
