@@ -115,3 +115,4 @@ obj-$(CONFIG_QCOM_QDSS_BRIDGE) += qdss_bridge.o
 subdir-ccflags-y += \
 	-Wno-ignored-attributes \
 	-Wno-gcc-compat
+obj-$(CONFIG_MFSE_QMI) += mfse_qmi_v01.o mfse_qmi.o
